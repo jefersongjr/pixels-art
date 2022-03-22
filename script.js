@@ -12,3 +12,12 @@ function addDivs() {
 }
 
 addDivs();
+
+const board = document.getElementById('pixel-board');
+function createBoard() {
+  for (let index = 1; index <= 25; index += 1) {
+    board.appendChild(createColors('pixel'));
+  }
+}
+
+createBoard();
