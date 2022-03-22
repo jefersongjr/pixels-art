@@ -13,6 +13,9 @@ function addDivs() {
 
 addDivs();
 
+const black = document.querySelector('.color1');
+black.classList.add('selected');
+
 const board = document.getElementById('pixel-board');
 function createBoard() {
   for (let index = 1; index <= 25; index += 1) {
