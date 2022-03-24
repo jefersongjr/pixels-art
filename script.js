@@ -27,9 +27,8 @@ color2.style.backgroundColor = 'rgb(0, 128, 255)';
 color3.style.backgroundColor = 'rgb(255, 51, 51)';
 color4.style.backgroundColor = 'rgb(0, 153,76)';
 
-const pickColor = document.querySelectorAll('.color');
-
 function changeSelected(event) {
+  const pickColor = document.querySelectorAll('.color');
   for (let i = 0; i < pickColor.length; i += 1) {
     pickColor[i].classList.remove('selected');
   }
@@ -37,10 +36,18 @@ function changeSelected(event) {
 }
 
 const board = document.getElementById('pixel-board');
-function createBoard() {
-  for (let index = 1; index <= 25; index += 1) {
-    board.appendChild(createColors('pixel'));
-  }
+
+function createBoard(pixel) {
+  const div = document.createElement('div');
+  div.classList = pixel;
+  return div;
 }
 
 createBoard();
+function appendBoard() {
+  for (let index = 1; index <= 25; index += 1) {
+    board.appendChild(createBoard('pixel'));
+  }
+}
+
+appendBoard();
