@@ -20,6 +20,8 @@ const color2 = document.querySelectorAll('.color')[1];
 const color3 = document.querySelectorAll('.color')[2];
 const color4 = document.querySelectorAll('.color')[3];
 
+color1.classList.add('selected');
+
 color1.style.backgroundColor = 'rgb(0, 0, 0)';
 color2.style.backgroundColor = 'rgb(0, 128, 255)';
 color3.style.backgroundColor = 'rgb(255, 51, 51)';
