@@ -60,3 +60,13 @@ function print(event) {
 
   event.target.style.backgroundColor = printPixel;
 }
+
+const btnClear = document.querySelector('#clear-board');
+const pixels = document.querySelectorAll('.pixel');
+function clearBoard() {
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'rgb(255, 255, 255)';
+  }
+}
+
+btnClear.addEventListener('click', clearBoard);
