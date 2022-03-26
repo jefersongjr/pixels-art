@@ -1,6 +1,7 @@
 #color-palette {
   height: 60px;
   width: 250px;
+  margin-bottom: 10px;
 }
 
 .color {
@@ -24,4 +25,6 @@
   display: inline-block;
 }
 
-
+.clear-board{
+  margin: 0 0 15px 55px;  
+}
