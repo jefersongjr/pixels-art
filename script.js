@@ -40,6 +40,7 @@ const board = document.getElementById('pixel-board');
 function createBoard(pixel) {
   const div = document.createElement('div');
   div.classList = pixel;
+  div.addEventListener('click', print);
   return div;
 }
 
@@ -51,3 +52,11 @@ function appendBoard() {
 }
 
 appendBoard();
+
+function print(event) {
+  const getCollor = document.querySelector('.selected');
+  const setPrint = window.getComputedStyle(getCollor);
+  const printPixel = setPrint.getPropertyValue('background-color');
+
+  event.target.style.backgroundColor = printPixel;
+}
