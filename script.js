@@ -21,11 +21,21 @@ const color3 = document.querySelectorAll('.color')[2];
 const color4 = document.querySelectorAll('.color')[3];
 
 color1.classList.add('selected');
+const randomColor1 = `rgb(${Math.floor(Math.random() * 254)}, ${Math.floor(
+  Math.random() * 254
+)} , ${Math.floor(Math.random() * 254)})`;
+
+const randomColor2 = `rgb(${Math.floor(Math.random() * 254)}, ${Math.floor(
+  Math.random() * 254
+)} , ${Math.floor(Math.random() * 254)})`;
+const randomColor3 = `rgb(${Math.floor(Math.random() * 254)}, ${Math.floor(
+  Math.random() * 254
+)} , ${Math.floor(Math.random() * 254)})`;
 
 color1.style.backgroundColor = 'rgb(0, 0, 0)';
-color2.style.backgroundColor = 'rgb(0, 128, 255)';
-color3.style.backgroundColor = 'rgb(255, 51, 51)';
-color4.style.backgroundColor = 'rgb(0, 153,76)';
+color2.style.backgroundColor = randomColor1;
+color3.style.backgroundColor = randomColor2;
+color4.style.backgroundColor = randomColor3;
 
 function changeSelected(event) {
   const pickColor = document.querySelectorAll('.color');
@@ -52,6 +62,8 @@ function appendBoard() {
 }
 
 appendBoard();
+
+// referência de pesquisa=  https://www.w3schools.com/jsref/jsref_getcomputedstyle.asp
 
 function print(event) {
   const getCollor = document.querySelector('.selected');
