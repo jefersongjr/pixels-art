@@ -1,5 +1,7 @@
 # Pixels Art
 
+![prévia](https://github.com/jefersongjr/pixels-art/blob/main/preview.gif)
+
 
 ##  🚀📋 Sobre:
 
