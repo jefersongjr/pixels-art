@@ -89,7 +89,6 @@ function changeBoard() {
     board.innerHTML = '';
     errorMsg.innerHTML = '';
     appendBoard(inputBoardSize.value);
-    console.log(inputBoardSize.value)
   }
     }
   
@@ -108,7 +107,7 @@ function print(event) {
 }
 
 const btnClear = document.querySelector('#clear-board');
-const pixels = document.querySelectorAll('.pixel');
+const pixels = document.getElementsByClassName('pixel');
 function clearBoard() {
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.backgroundColor = 'rgb(255, 255, 255)';
