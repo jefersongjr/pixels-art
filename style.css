@@ -1,4 +1,5 @@
 #color-palette {
+  margin-top: 15px;
   height: 60px;
   width: 250px;
   margin-bottom: 10px;
@@ -11,12 +12,6 @@
   display: inline-block;
 }
 
-#pixel-board {
-  width: 210px;
-  height: 210px;
-  line-height: 0%;
-}
-
 .pixel {
   background-color: rgb(255, 255, 255);
   border: 1px solid black;
@@ -25,7 +20,19 @@
   display: inline-block;
 }
 
-#clear-board {
+#pixel-board {
+  width: max-content;
+  height: fit-content;
+  margin: 15px auto;
+  line-height: 0%;
+}
+
+#board-size {
+  width: 50px;
+}
+
+
+#clear-board , #generate-board {
   margin-bottom: 15px;
   background-color: rgb(240, 248, 255);
   height: 30px;
@@ -35,15 +42,25 @@
   
 }
 
-#clear-board:hover{
+#clear-board:hover {
   background-color: rgb(0, 138, 138);
   color: rgb(236, 241, 245);
 }
 
-#clear-board:active{
+#clear-board:active {
   background-color: rgb(37, 78, 78);
   color: rgb(236, 241, 245);
 }
+
+label, #error {
+  background-color: rgb(67, 67, 148);
+  border-radius: 20%;
+  font-weight: 900;
+  color: aliceblue;
+  margin: 0 auto;
+  width: fit-content;
+}
+
 
 main {
   margin-top: 90px;
@@ -55,11 +72,20 @@ section {
 }
 
 body {
-  background-image: url('https://images.unsplash.com/photo-1528557692780-8e7be39eafab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+  background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/01073865290819.5d61d475f0072.jpg');
   background-size: cover;
 }
 
 h1 {
- font-size: 40px;
- color: rgb(211, 211, 211);
+  background-color: rgb(67, 67, 148);
+  border-radius: 18%;
+  color: rgb(255, 255, 255);
+  font-size: 40px;
+  margin: auto;
+  opacity: 85%;
+  width: max-content;
+}
+
+ul {
+  list-style-type: none;
 }

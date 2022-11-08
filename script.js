@@ -1,4 +1,5 @@
 const palette = document.getElementById('color-palette');
+const boardSize = 5;
 
 function createColors(color) {
   const div = document.createElement('div');
@@ -46,29 +47,62 @@ function changeSelected(event) {
 }
 
 const board = document.getElementById('pixel-board');
+const inputBoardSize = document.getElementById('board-size');
+const btnVqv = document.getElementById('generate-board');
+const errorMsg = document.getElementById('error');
 
-function createBoard(pixel) {
+
+function createBoard() {
   const div = document.createElement('div');
-  div.classList = pixel;
+  div.classList = 'pixel';
   div.addEventListener('click', print);
   return div;
 }
 
-createBoard();
-function appendBoard() {
-  for (let index = 1; index <= 25; index += 1) {
-    board.appendChild(createBoard('pixel'));
+function createRow(length) {
+  const row = document.createElement('li');
+  row.className = 'row';
+  for (let i = 0; i < length; i += 1) {
+    row.appendChild(createBoard());
   }
+  return row;
 }
 
-appendBoard();
+function appendBoard(size) {
+  let currentSize = size;
+  if (currentSize < 5) {
+    currentSize = 5;
+    errorMsg.innerHTML = 'Selecione um valor entre 5 e 50';
+  } else if (currentSize > 50) {
+    currentSize = 50;
+    errorMsg.innerHTML = 'Selecione um valor entre 5 e 50';
+  }
+  for (let i = 0; i < currentSize; i += 1) {
+    board.appendChild(createRow(currentSize));
+  }
+  }
+
+function changeBoard() {
+  if (!inputBoardSize.value) {
+    alert('Board inválido!');
+  } else {
+    board.innerHTML = '';
+    errorMsg.innerHTML = '';
+    appendBoard(inputBoardSize.value);
+    console.log(inputBoardSize.value)
+  }
+    }
+  
 
 // referência de pesquisa=  https://www.w3schools.com/jsref/jsref_getcomputedstyle.asp
+
+btnVqv.addEventListener('click', changeBoard)
 
 function print(event) {
   const getCollor = document.querySelector('.selected');
   const setPrint = window.getComputedStyle(getCollor);
   const printPixel = setPrint.getPropertyValue('background-color');
+  const errorMsg = document.getElementById('size-error');
 
   event.target.style.backgroundColor = printPixel;
 }
@@ -82,3 +116,9 @@ function clearBoard() {
 }
 
 btnClear.addEventListener('click', clearBoard);
+
+function onLoadPage() {
+  appendBoard(boardSize);
+}
+
+window.onload = onLoadPage;
